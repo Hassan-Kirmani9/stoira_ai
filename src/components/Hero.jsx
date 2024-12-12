@@ -38,7 +38,7 @@ const Hero = () => {
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
           Stoira is a cutting-edge AI media house that blends technogy and creativity to produce innovative and immersive experiences.
           </p>
-          <Button href="/pricing" white>
+          <Button white>
             Get started
           </Button>
         </div>
