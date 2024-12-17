@@ -9,6 +9,9 @@ import {
   discord,
   discordBlack,
   facebook,
+  film,
+  audiobook,
+  advert1,
   figma,
   file02,
   framer,
@@ -247,25 +250,27 @@ export const benefits = [
     title: "AI Film Making",
     text: "Create cinematic masterpieces with AI tools that automate production, enhance storytelling, and optimize editing for filmmakers at any level.",
     backgroundUrl: "./src/assets/benefits/card-1.svg",
-    iconUrl: benefitIcon1,
+    iconUrl: film,
     imageUrl: benefitImage2,
+    bg: '#ac6aff'
   },
   {
     id: "1",
     title: "AI Ad Films",
     text: "Bring your brand's vision to life with AI-driven advertisements. Our technology automates and elevates creativity, producing high-quality ads at lightning speed.",
-    backgroundUrl: "./src/assets/benefits/card-2.svg",
-    iconUrl: benefitIcon2,
+    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    iconUrl: advert1,
     imageUrl: benefitImage2,
-    light: true,
+    bg: '#ffc876'
   },
   {
     id: "2",
     title: "Graphic Audiobooks",
     text: "Experience audiobooks like never before. Our graphic audiobooks combine immersive sound effects and narration to create a unique listening experience.",
     backgroundUrl: "./src/assets/benefits/card-3.svg",
-    iconUrl: benefitIcon3,
+    iconUrl: audiobook,
     imageUrl: benefitImage2,
+    bg: '#7adb78'
   },
 
 ];

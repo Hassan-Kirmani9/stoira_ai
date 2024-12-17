@@ -38,9 +38,9 @@ import protopie from "./collaboration/protopie.png";
 import raindrop from "./collaboration/raindrop.png";
 import slack from "./collaboration/slack.png";
 
-import service1 from "./services/image-1.png";
+import service1 from "./services/img.png";
 import service2 from "./services/service-1.png";
-import service3 from "./services/image-2.png";
+import service3 from "./services/image_2.png";
 
 import lines from "./pricing/lines.svg";
 import stars from "./pricing/stars.svg";
@@ -70,12 +70,16 @@ import benefitIcon2 from "./benefits/icon-2.svg";
 import benefitIcon3 from "./benefits/icon-3.svg";
 import benefitIcon4 from "./benefits/icon-4.svg";
 import benefitImage2 from "./benefits/image-2.png";
+import film from "./benefits/film.svg";
+import audiobook from "./benefits/audiobook.svg";
+import advert1 from "./benefits/advertisement.svg";
 
 import discordBlack from "./socials/discord.svg";
 import facebook from "./socials/facebook.svg";
 import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
+import { Link } from 'react-router-dom'
 
 export {
   brainwave,
@@ -145,6 +149,9 @@ export {
   benefitImage2,
   discordBlack,
   facebook,
+  film,
+  audiobook,
+  advert1,
   instagram,
   telegram,
   twitter,
