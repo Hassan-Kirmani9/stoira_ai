@@ -38,7 +38,7 @@ import protopie from "./collaboration/protopie.png";
 import raindrop from "./collaboration/raindrop.png";
 import slack from "./collaboration/slack.png";
 
-import service1 from "./services/img.png";
+import service1 from "./services/img11.webp";
 import service2 from "./services/service-1.png";
 import service3 from "./services/image_2.png";
 

@@ -24,7 +24,7 @@ const Services = () => {
           <div className="relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
               <img
-                className=""
+                className="w-full h-full object-cover md:object-right opacity-50  md:opacity-100"
                 width={800}
                 alt="Smartest AI"
                 height={730}
@@ -32,9 +32,9 @@ const Services = () => {
               />
             </div>
 
-            <div className="relative z-1 max-w-[17rem] ml-auto">
-              <h4 className="h4 mb-4">Audiobook App</h4>
-              <p className="body-2 mb-[3rem] text-n-3">
+            <div className="relative z-1 max-w-[17rem] ml-auto ">
+              <h4 className="h4 mb-4 md:text-white ">Audiobook App</h4>
+              <p className="body-2 mb-[3rem] md:text-n-3 text-white">
                 Enjoy a wide range of audiobooks with dynamic narration and effects. Our app enhances your listening experience, bringing stories to life.
               </p>
               <ul className="body-2">
@@ -53,11 +53,11 @@ const Services = () => {
           </div>
 
           <div className="relative z-1 grid gap-5 lg:grid-cols-2">
-          <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]">
+            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem]">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">AI Music Creator</h4>
                 <p className="body-2 mb-[2rem] text-n-3">
-                Compose original music with ease. Our AI music creator helps you generate high-quality tracks for any project, all powered by AI.
+                  Compose original music with ease. Our AI music creator helps you generate high-quality tracks for any project, all powered by AI.
                 </p>
 
                 <ul className="flex items-center justify-between">
@@ -114,7 +114,7 @@ const Services = () => {
 
             </div>
 
-           
+
           </div>
 
           <Gradient />
