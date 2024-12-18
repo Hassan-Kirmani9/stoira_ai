@@ -8,7 +8,7 @@ import islandVideo from "../assets/island.mp4";
 
 
 const Benefits = () => {
-  
+
   return (
     <Section id="features">
       <div className="container relative z-2">
@@ -55,10 +55,12 @@ const Benefits = () => {
                 className="absolute inset-0.5 bg-n-8"
                 style={{ clipPath: "url(#benefits)" }}
               >
-                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-15 cursor-pointer">
-                {item.imageUrl && (
+                <div
+                  className="absolute inset-0 opacity-100 sm:opacity-0 sm:transition-opacity sm:hover:opacity-10"
+                >
+                  {item.imageUrl && (
                     <video
-                      src={item.videoUrl} 
+                      src={item.videoUrl}
                       width={380}
                       height={362}
                       className="w-full h-full object-cover"
@@ -68,6 +70,7 @@ const Benefits = () => {
                     />
                   )}
                 </div>
+
               </div>
 
               <ClipPath />
