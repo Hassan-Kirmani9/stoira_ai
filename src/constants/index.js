@@ -247,7 +247,7 @@ export const benefits = [
     id: "0",
     title: "AI Film Making",
     text: "Create cinematic masterpieces with AI tools that automate production, enhance storytelling, and optimize editing for filmmakers at any level.",
-    backgroundUrl: "./src/assets/benefits/card-1.svg",
+    backgroundUrl: "/card-1.svg",
     iconUrl: film,
     imageUrl: benefitImage2,
     videoUrl: "/web_serires.mp4",
@@ -257,20 +257,20 @@ export const benefits = [
     id: "1",
     title: "AI Ad Films",
     text: "Bring your brand's vision to life with AI-driven advertisements. Our technology automates and elevates creativity, producing high-quality ads at lightning speed.",
-    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    backgroundUrl: "/card-2.svg",
     iconUrl: advert1,
     imageUrl: benefitImage2,
-    videoUrl: "./src/assets/island.mp4",
+    videoUrl: "/island.mp4",
     bg: '#ffc876'
   },
   {
     id: "2",
     title: "Graphic Audiobooks",
     text: "Experience audiobooks like never before. Our graphic audiobooks combine immersive sound effects and narration to create a unique listening experience.",
-    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    backgroundUrl: "/card-3.svg",
     iconUrl: audiobook,
     imageUrl: benefitImage2,
-    videoUrl: "./src/assets/eye_animation.mp4",
+    videoUrl: "/eye_animation.mp4",
     bg: '#7adb78'
   },
   
