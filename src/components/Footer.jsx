@@ -16,9 +16,10 @@ const Footer = () => {
               key={item.id}
               href={item.url}
               target="_blank"
-              className="flex items-center justify-center w-10 h-10 bg-n-7 rounded-full transition-colors hover:bg-n-6"
+              style={{color:"white !important"}}
+              className="flex items-center justify-center w-10 h-10 bg-n-1 rounded-full transition-colors hover:bg-n-2 hover:text-white"
             >
-              <img src={item.iconUrl} width={16} height={16} alt={item.title} />
+              <img style={{color:"white !important"}} src={item.iconUrl} width={24} height={24} alt={item.title} className="text-white" />
             </a>
           ))}
         </ul>

@@ -52,6 +52,7 @@ import roadmap1 from "./roadmap/image1.png";
 import roadmap2 from "./roadmap/image-2.png";
 import roadmap3 from "./roadmap/image-3.png";
 import roadmap4 from "./roadmap/music_lady.webp";
+import roadmap5 from "./roadmap/music_lady_1.jpg";
 import undone from "./roadmap/undone.svg";
 
 import notification1 from "./notification/music_lady.webp";
@@ -74,11 +75,13 @@ import film from "./benefits/film.svg";
 import audiobook from "./benefits/audiobook.svg";
 import advert1 from "./benefits/advertisement.svg";
 
-import discordBlack from "./socials/discord.svg";
+import terms from "./socials/terms.svg";
 import facebook from "./socials/facebook.svg";
-import instagram from "./socials/instagram.svg";
-import telegram from "./socials/telegram.svg";
+import youtube from "./socials/youtube.svg";
+import mail from "./socials/mail.svg";
 import twitter from "./socials/twitter.svg";
+import linkedin from "./socials/linkedin.svg";
+import privacy from "./socials/privacy.svg";
 import { Link } from 'react-router-dom'
 
 export {
@@ -131,6 +134,7 @@ export {
   roadmap2,
   roadmap3,
   roadmap4,
+  roadmap5,
   undone,
   notification1,
   notification2,
@@ -147,12 +151,14 @@ export {
   benefitIcon3,
   benefitIcon4,
   benefitImage2,
-  discordBlack,
   facebook,
   film,
   audiobook,
   advert1,
-  instagram,
-  telegram,
   twitter,
+  youtube,
+  mail,
+  terms,
+  linkedin,
+  privacy
 };

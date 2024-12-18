@@ -10,14 +10,11 @@ const Roadmap = () => (
   <Section className="overflow-hidden" id="roadmap">
     <div className="container md:pb-10">
       <Heading tag="Ready to get started" title="Why Choose Stoira?" />
-
       <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
-        {roadmap.map((item) => {
-
+        {roadmap.map((item, index) => {
           return (
             <div
-              className={`md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] ${item.colorful ? "bg-conic-gradient" : "bg-n-6"
-                }`}
+              className={`md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] ${item.colorful ? "bg-conic-gradient" : "bg-n-6"}`}
               key={item.id}
             >
               <div className="relative p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-15">
@@ -32,11 +29,13 @@ const Roadmap = () => (
                 </div>
                 <div className="relative z-1">
                   <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
-
-
+                    {/* You can add additional content here if needed */}
                   </div>
 
-                  <div className="mb-10 -my-10 -mx-15">
+                  {/* Conditionally apply margin-top of 0 to the 4th image */}
+                  <div
+                    className={`mb-10 -my-10 -mx-15 ${index === 3 ? 'mt-[-10rem]' : ''}`}
+                  >
                     <img
                       className="w-full"
                       src={item.imageUrl}
@@ -55,6 +54,7 @@ const Roadmap = () => (
 
         <Gradient />
       </div>
+
 
 
     </div>

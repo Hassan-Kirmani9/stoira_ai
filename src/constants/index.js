@@ -1,14 +1,8 @@
 import {
-  benefitIcon1,
-  benefitIcon2,
-  benefitIcon3,
-  benefitIcon4,
   benefitImage2,
   chromecast,
   disc02,
   discord,
-  discordBlack,
-  facebook,
   film,
   audiobook,
   advert1,
@@ -16,7 +10,6 @@ import {
   file02,
   framer,
   homeSmile,
-  instagram,
   notification2,
   notification3,
   notification4,
@@ -31,12 +24,17 @@ import {
   roadmap2,
   roadmap3,
   roadmap4,
+  roadmap5,
   searchMd,
   slack,
   sliders04,
-  telegram,
   twitter,
   yourlogo,
+  linkedin,
+  privacy,
+  terms,
+  youtube,
+  mail
 } from "../assets";
 
 export const navigation = [
@@ -82,7 +80,7 @@ export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const brainwaveServices = [
   "Audiobooks with immersive effects",
-  "Stories brought to life",  
+  "Stories brought to life",
   "A new way to listen",
 ];
 
@@ -126,7 +124,7 @@ export const roadmap = [
     text: "From films to ads and audiobooks, our AI solutions adapt to every creative need.",
     date: "",
     status: "progress",
-    imageUrl: roadmap4,
+    imageUrl: roadmap5,
   },
 ];
 
@@ -252,6 +250,7 @@ export const benefits = [
     backgroundUrl: "./src/assets/benefits/card-1.svg",
     iconUrl: film,
     imageUrl: benefitImage2,
+    videoUrl: "./src/assets/web_serires.mp4",
     bg: '#ac6aff'
   },
   {
@@ -261,6 +260,7 @@ export const benefits = [
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: advert1,
     imageUrl: benefitImage2,
+    videoUrl: "./src/assets/island.mp4",
     bg: '#ffc876'
   },
   {
@@ -270,40 +270,47 @@ export const benefits = [
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     iconUrl: audiobook,
     imageUrl: benefitImage2,
+    videoUrl: "./src/assets/eye_animation.mp4",
     bg: '#7adb78'
   },
-
+  
 ];
 
 export const socials = [
   {
     id: "0",
-    title: "Discord",
-    iconUrl: discordBlack,
-    url: "#",
+    title: "Mail",
+    iconUrl: mail,
+    url: "mailto:contact@stoira.com",
   },
   {
     id: "1",
     title: "Twitter",
     iconUrl: twitter,
-    url: "#",
+    url: "https://x.com/Stoira_official",
   },
   {
     id: "2",
-    title: "Instagram",
-    iconUrl: instagram,
-    url: "#",
+    title: "Youtube",
+    iconUrl: youtube,
+    url: "https://www.youtube.com/@stoira_official/videos",
   },
   {
     id: "3",
-    title: "Telegram",
-    iconUrl: telegram,
-    url: "#",
+    title: "LinkedIn",
+    iconUrl: linkedin,
+    url: "https://www.linkedin.com/company/stoira",
   },
   {
     id: "4",
-    title: "Facebook",
-    iconUrl: facebook,
-    url: "#",
+    title: "Terms & Condition",
+    iconUrl: terms,
+    url: "https://www.stoira.com/terms-condition",
+  },
+  {
+    id: "4",
+    title: "Privacy",
+    iconUrl: privacy,
+    url: "https://www.stoira.com/privacy-policy",
   },
 ];

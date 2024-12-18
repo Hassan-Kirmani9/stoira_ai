@@ -4,8 +4,11 @@ import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
+import islandVideo from "../assets/island.mp4";
+
 
 const Benefits = () => {
+  
   return (
     <Section id="features">
       <div className="container relative z-2">
@@ -34,8 +37,8 @@ const Benefits = () => {
                     alt={item.title}
                     style={{
                       backgroundColor: item.bg,
-                      padding: '8px', 
-                      borderRadius: '8px', 
+                      padding: '8px',
+                      borderRadius: '8px',
                     }}
                   />
 
@@ -52,14 +55,16 @@ const Benefits = () => {
                 className="absolute inset-0.5 bg-n-8"
                 style={{ clipPath: "url(#benefits)" }}
               >
-                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                  {item.imageUrl && (
-                    <img
-                      src={item.imageUrl}
+                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-15 cursor-pointer">
+                {item.imageUrl && (
+                    <video
+                      src={item.videoUrl} 
                       width={380}
                       height={362}
-                      alt={item.title}
                       className="w-full h-full object-cover"
+                      autoPlay
+                      loop
+                      muted
                     />
                   )}
                 </div>
