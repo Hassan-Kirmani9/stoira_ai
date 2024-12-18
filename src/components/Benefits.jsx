@@ -57,22 +57,30 @@ const Benefits = () => {
               >
                 <div
                   className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10"
+                  onMouseEnter={(e) => {
+                    const video = e.currentTarget.querySelector("video");
+                    if (video) video.play(); 
+                  }}
+                  onMouseLeave={(e) => {
+                    const video = e.currentTarget.querySelector("video");
+                    if (video) video.pause(); 
+                  }}
                   onTouchStart={(e) => {
                     const video = e.currentTarget.querySelector("video");
                     if (video) {
-                      video.play(); // Start playing the video on touch
-                      e.currentTarget.style.opacity = "1"; // Make the video visible
+                      video.play();
+                      e.currentTarget.style.opacity = "1"; 
                     }
                   }}
                   onTouchEnd={(e) => {
                     const video = e.currentTarget.querySelector("video");
                     if (video) {
-                      video.pause(); // Pause the video when touch ends
-                      e.currentTarget.style.opacity = "0"; // Hide the video
+                      video.pause();
+                      e.currentTarget.style.opacity = "0"; 
                     }
                   }}
                 >
-                  {item.imageUrl && (
+                  {item.videoUrl && (
                     <video
                       src={item.videoUrl}
                       width={380}
@@ -80,6 +88,7 @@ const Benefits = () => {
                       className="w-full h-full object-cover"
                       loop
                       muted
+                      playsInline 
                     />
                   )}
                 </div>
