@@ -56,7 +56,21 @@ const Benefits = () => {
                 style={{ clipPath: "url(#benefits)" }}
               >
                 <div
-                  className="absolute inset-0 opacity-100 sm:opacity-0 sm:transition-opacity sm:hover:opacity-10"
+                  className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10"
+                  onTouchStart={(e) => {
+                    const video = e.currentTarget.querySelector("video");
+                    if (video) {
+                      video.play(); // Start playing the video on touch
+                      e.currentTarget.style.opacity = "1"; // Make the video visible
+                    }
+                  }}
+                  onTouchEnd={(e) => {
+                    const video = e.currentTarget.querySelector("video");
+                    if (video) {
+                      video.pause(); // Pause the video when touch ends
+                      e.currentTarget.style.opacity = "0"; // Hide the video
+                    }
+                  }}
                 >
                   {item.imageUrl && (
                     <video
@@ -64,7 +78,6 @@ const Benefits = () => {
                       width={380}
                       height={362}
                       className="w-full h-full object-cover"
-                      autoPlay
                       loop
                       muted
                     />
