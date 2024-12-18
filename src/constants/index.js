@@ -250,7 +250,7 @@ export const benefits = [
     backgroundUrl: "./src/assets/benefits/card-1.svg",
     iconUrl: film,
     imageUrl: benefitImage2,
-    videoUrl: "./src/assets/web_serires.mp4",
+    videoUrl: "/web_serires.mp4",
     bg: '#ac6aff'
   },
   {
