@@ -117,6 +117,8 @@ const TestimonialSlider = () => {
 
   return (
     <>
+        <div className="container md:pb-10">
+
       <Heading title="Testimonials" />
       <div className="relative w-full max-w-6xl mx-auto px-4 py-10 ">
       <div className="overflow-hidden">
@@ -152,6 +154,7 @@ const TestimonialSlider = () => {
           />
         ))}
       </div> */}
+    </div>
     </div>
     </>
   );
