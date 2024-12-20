@@ -12,7 +12,7 @@ const Benefits = () => {
     <Section id="features">
       <div className="container relative z-2">
         <Heading
-          className="md:max-w-md lg:max-w-2xl"
+          className="md:max-w-md lg:max-w-2xl mb-[-20px]" 
           title="Explore Our AI-Powered Offerings"
         />
 
@@ -41,10 +41,10 @@ const Benefits = () => {
                     }}
                   />
 
-                  <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
+                  {/* <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
                     Explore more
                   </p>
-                  <Arrow />
+                  <Arrow /> */}
                 </div>
               </div>
 
