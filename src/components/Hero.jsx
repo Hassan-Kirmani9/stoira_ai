@@ -1,4 +1,4 @@
-import { curve, heroBackground , bgImg, bgImg2 } from "../assets";
+import { curve, heroBackground, bgImg, bgImg2 } from "../assets";
 import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
@@ -23,9 +23,9 @@ const Hero = () => {
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h1 mb-6">
-          Unleashing AI Creativity for&nbsp;the&nbsp; {` `}
+            Unleashing AI Creativity for&nbsp;the&nbsp; {` `}
             <span className="inline-block relative">
-            Digital Era {" "}
+              Digital Era {" "}
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
@@ -36,11 +36,12 @@ const Hero = () => {
             </span>
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-          Stoira is a cutting-edge AI media house that blends technogy and creativity to produce innovative and immersive experiences.
+            Stoira is a cutting-edge AI media house that blends technogy and creativity to produce innovative and immersive experiences.
           </p>
-          <Button white>
+          <Button white onClick={() => window.open("https://apps.apple.com/us/app/stoira/id6670250768", "_blank")}>
             Get started
           </Button>
+
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
           <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
