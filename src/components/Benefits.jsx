@@ -12,7 +12,7 @@ const Benefits = () => {
     <Section id="features">
       <div className="container relative z-2">
         <Heading
-          className="md:max-w-md lg:max-w-2xl mb-[-20px]" 
+          className="md:max-w-md lg:max-w-2xl" 
           title="Explore Our AI-Powered Offerings"
         />
 

@@ -117,32 +117,32 @@ const TestimonialSlider = () => {
 
   return (
     <>
-        <div className="container md:pb-10">
+      <div className="container md:pb-10">
 
-      <Heading title="Testimonials" />
-      <div className="relative w-full max-w-6xl mx-auto px-4 py-10 ">
-      <div className="overflow-hidden">
-        <div
-          className="flex transition-transform duration-1000 ease-in-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-4">
-              <div className="bg-transparent rounded-lg shadow-lg p-6 md:p-8 h-full border-2 border-gray-700">
-                <div className="flex items-center mb-4">
-                
-                  <div>
-                    <h3 className="font-semibold text-lg text">{testimonial.name}</h3>
-                    <p className="text-white">{testimonial.role}</p>
+        <Heading title="Testimonials mb-[-20px]" />
+        <div className="relative w-full max-w-6xl mx-auto px-4 py-10 ">
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-1000 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {testimonials.map((testimonial) => (
+                <div key={testimonial.id} className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-4">
+                  <div className="bg-transparent rounded-lg shadow-lg p-6 md:p-8 h-full border-2 border-gray-700">
+                    <div className="flex items-center mb-4">
+
+                      <div>
+                        <h3 className="font-semibold text-lg text">{testimonial.name}</h3>
+                        <p className="text-white">{testimonial.role}</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-700 italic">&ldquo;{testimonial.quote}&rdquo;</p>
                   </div>
                 </div>
-                <p className="text-gray-700 italic">&ldquo;{testimonial.quote}&rdquo;</p>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-      {/* <div className="flex justify-center mt-4">
+          </div>
+          {/* <div className="flex justify-center mt-4">
         {testimonials.map((_, index) => (
           <button
             key={index}
@@ -154,8 +154,8 @@ const TestimonialSlider = () => {
           />
         ))}
       </div> */}
-    </div>
-    </div>
+        </div>
+      </div>
     </>
   );
 };
