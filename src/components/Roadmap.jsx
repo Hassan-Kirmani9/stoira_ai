@@ -46,8 +46,8 @@ const Roadmap = () => {
 
                     {/* Conditionally apply margin-top of 0 to the 4th image */}
                     <div
-                      className={`mb-10 -my-10 -mx-15 ${index === 3 || index === 0 ? 'mt-[-10rem]' : ''}`}
-                    >
+                      className={`mb-10 -my-10 -mx-15 ${index === 0 ? 'mt-[-8.5rem]' : ''} ${index === 3 ? 'mt-[-10rem]' : ''}`}
+F                      >
                       {item.id === "0" ? (
                         <video
                           ref={videoRef}  // Attach ref to the video element
