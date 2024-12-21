@@ -6,6 +6,7 @@ import { roadmap } from "../constants";
 import { check2, grid } from "../assets";
 import { Gradient } from "./design/Roadmap";
 import waves from "../assets/roadmap/waves.mp4"
+import funnel from "../assets/roadmap/funnel1.mp4"
 import { useEffect, useRef } from "react";
 
 const Roadmap = () => {
@@ -46,27 +47,18 @@ const Roadmap = () => {
 
                     {/* Conditionally apply margin-top of 0 to the 4th image */}
                     <div
-                      className={`mb-10 -my-10 -mx-15 ${index === 0 ? 'mt-[-8.5rem]' : ''} ${index === 3 ? 'mt-[-10rem]' : ''}`}
-F                      >
-                      {item.id === "0" ? (
-                        <video
-                          ref={videoRef}  // Attach ref to the video element
-                          src={waves}
-                          width={628}
-                          height={426}
-                          loop
-                          autoPlay
-                          muted
+                      className={`mb-10 -my-10 -mx-15 ${index === 0 ? 'md:mt-[-8.5rem]' : ''} ${index === 3 ? 'mt-[-10rem]' : ''} ${index === 1 ? 'mt-[-10rem]' : ''}`}
+                    >
+                      {index === 0 ? (
+                        <video src={waves} width={628} height={426} loop autoPlay muted ref={videoRef}  // Attach ref to the video element
+                        />
+                      ) : index === 1 ? (
+                        <video src={funnel} width={628} height={426} loop autoPlay muted ref={videoRef}  // Attach ref to the video element
                         />
                       ) : (
-                        <img
-                          className="w-full"
-                          src={item.imageUrl}
-                          width={628}
-                          height={426}
-                          alt={item.title}
-                        />
+                        <img className="w-full" src={item.imageUrl} width={628} height={426} alt={item.title} />
                       )}
+
                     </div>
                     <h4 className="h4 mb-4">{item.title}</h4>
                     <p className="body-2 text-n-4">{item.text}</p>
