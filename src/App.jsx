@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import Pricing from "./components/Pricing";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
+import Testimonial from "./components/Testimonial";
 import TestimonialSlider from "./components/TestimonialSlider";
 
 const App = () => {
@@ -20,7 +21,8 @@ const App = () => {
         <Services />
         {/* <Pricing /> */}
         <Roadmap />
-        <TestimonialSlider />
+        {/* <TestimonialSlider /> */}
+        <Testimonial/>
         <Footer />
       </div>
 
