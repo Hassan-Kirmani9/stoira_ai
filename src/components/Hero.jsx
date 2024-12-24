@@ -3,8 +3,9 @@ import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
 import { ScrollParallax } from "react-just-parallax";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Notification from "./Notification";
+import BgVid from "../assets/hero/bg_vid.mp4";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -13,6 +14,13 @@ const Hero = () => {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.7;
+    }
+  }, []);
 
   return (
     <Section
@@ -43,7 +51,7 @@ const Hero = () => {
           <Button white onClick={toggleModal}>Get started</Button>
         </div>
 
-        {/* Modal */}
+        { }
         {isModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
             <div className="bg-white bg-opacity-80 rounded-lg p-6 w-[90%] max-w-md shadow-lg border-2 border-purple-700 ">
@@ -119,13 +127,22 @@ const Hero = () => {
             <div className="relative bg-n-8 rounded-[1rem]">
               <div className="h-[1.4rem] bg-n-7 rounded-t-[0.9rem]" />
               <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
-                <img
-                  src={bgImg2}
+                <video
+                  ref={videoRef}
                   className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
                   width={1024}
                   height={490}
-                  alt="AI"
-                />
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+
+                  alt="AI video"
+                >
+                  <source src={BgVid} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
                 <ScrollParallax isAbsolutelyPositioned>
                   <Notification
                     className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[19rem] xl:flex "
@@ -135,24 +152,15 @@ const Hero = () => {
               </div>
             </div>
 
-            <Gradient />
           </div>
-          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
-            <img
-              src={heroBackground}
-              className="w-full"
-              width={1440}
-              height={1800}
-              alt="hero"
-            />
-          </div>
+
 
           <BackgroundCircles />
         </div>
       </div>
 
       <BottomLine />
-    </Section>
+    </Section >
   );
 };
 
