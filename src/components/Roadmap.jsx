@@ -51,7 +51,7 @@ const Roadmap = () => {
 
                   <div
                     className={`mb-10 -my-10 -mx-15 ${index === 0 ? 'md:mt-[-8.5rem]' : ''
-                      } ${index === 3 ? 'mt-[-10rem]' : ''} ${index === 1 ? 'mt-[-10rem] w-[200rem]' : ''
+                      } ${index === 3 ? 'mt-[-10rem]' : ''} ${index === 1 ? 'mt-[-10rem]' : ''
                       }`}
                   >
                     {index === 0 ? (
@@ -69,7 +69,7 @@ const Roadmap = () => {
                         width={328}
                         height={426}
                         alt="Funnel"
-                        className="translate-x-32"
+                        className="md:translate-x-32 translate-x-10"
                         onMouseEnter={() => setHoveredIndex(1)}
                         onMouseLeave={() => setHoveredIndex(null)}
                       />
