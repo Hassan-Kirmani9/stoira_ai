@@ -5,18 +5,29 @@ import Tagline from "./Tagline";
 import { roadmap } from "../constants";
 import { check2, grid } from "../assets";
 import { Gradient } from "./design/Roadmap";
-import waves from "../assets/roadmap/waves.mp4"
-import funnel from "../assets/roadmap/funnel1.mp4"
-import { useEffect, useRef } from "react";
+import waves from "../assets/roadmap/waves.mp4";
+import funnel from "../assets/roadmap/funnel2.gif";
+import funnelStatic from "../assets/roadmap/funnel222.png";
+import { useEffect, useRef, useState } from "react";
 
 const Roadmap = () => {
-  const videoRef = useRef(null); // Reference for the video element
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      // Slow down the video by setting the playback rate to 0.05 (very slow speed)
-      videoRef.current.playbackRate = 0.5;
+  const videoRefs = useRef([]); // Reference for the video element
+
+  const handleMouseEnter = (videoElement) => {
+    if (videoElement) {
+      videoElement.play();
     }
+  };
+
+  const handleMouseLeave = (videoElement) => {
+    if (videoElement) {
+      videoElement.pause();
+    }
+  };
+  useEffect(() => {
+    videoRefs.current = videoRefs.current.slice(0, roadmap.length);
   }, []);
 
   return (
@@ -24,52 +35,63 @@ const Roadmap = () => {
       <div className="container md:pb-10">
         <Heading tag="Ready to get started" title="Why Choose Stoira?" />
         <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
-          {roadmap.map((item, index) => {
-            return (
-              <div
-                className={`md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] ${item.colorful ? "bg-conic-gradient" : "bg-n-6"}`}
-                key={item.id}
-              >
-                <div className="relative p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-15">
-                  <div className="absolute top-0 left-0 max-w-full">
-                    <img
-                      className="w-full"
-                      src={grid}
-                      width={550}
-                      height={550}
-                      alt="Grid"
-                    />
+          {roadmap.map((item, index) => (
+            <div
+              className={`md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] bg-conic-gradient  ${item.colorful ? "bg-conic-gradient" : "bg-n-6"
+                }`}
+              key={item.id}
+            >
+              <div className="relative p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-15 ">
+                <div className="absolute top-0 left-0 max-w-full">
+                  <img className="w-full" src={grid} width={550} height={550} alt="Grid" />
+                </div>
+                <div className="relative z-1">
+                  <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
                   </div>
-                  <div className="relative z-1">
-                    <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
-                      {/* You can add additional content here if needed */}
-                    </div>
 
-                    {/* Conditionally apply margin-top of 0 to the 4th image */}
-                    <div
-                      className={`mb-10 -my-10 -mx-15 ${index === 0 ? 'md:mt-[-8.5rem]' : ''} ${index === 3 ? 'mt-[-10rem]' : ''} ${index === 1 ? 'mt-[-10rem]' : ''}`}
-                    >
-                      {index === 0 ? (
-                        <video src={waves} width={628} height={426} loop autoPlay muted ref={videoRef}  // Attach ref to the video element
-                        />
-                      ) : index === 1 ? (
-                        <video src={funnel} width={628} height={426} loop autoPlay muted ref={videoRef}  // Attach ref to the video element
-                        />
-                      ) : (
-                        <img className="w-full" src={item.imageUrl} width={628} height={426} alt={item.title} />
-                      )}
-
-                    </div>
-                    <h4 className="h4 mb-4">{item.title}</h4>
-                    <p className="body-2 text-n-4">{item.text}</p>
+                  <div
+                    className={`mb-10 -my-10 -mx-15 ${index === 0 ? 'md:mt-[-8.5rem]' : ''
+                      } ${index === 3 ? 'mt-[-10rem]' : ''} ${index === 1 ? 'mt-[-10rem] w-[200rem]' : ''
+                      }`}
+                  >
+                    {index === 0 ? (
+                      <video
+                        src={waves}
+                        width={628}
+                        height={426}
+                        loop
+                        autoPlay
+                        muted
+                      />
+                    ) : index === 1 ? (
+                      <img
+                        src={hoveredIndex === 1 ? funnel : funnelStatic}
+                        width={328}
+                        height={426}
+                        alt="Funnel"
+                        className="translate-x-32"
+                        onMouseEnter={() => setHoveredIndex(1)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                      />
+                    ) : (
+                      <img
+                        className="w-full"
+                        src={item.imageUrl}
+                        width={628}
+                        height={426}
+                        alt={item.title}
+                      />
+                    )}
                   </div>
+                  <h4 className="h4 mb-4">{item.title}</h4>
+                  <p className="body-2 text-n-4">{item.text}</p>
                 </div>
               </div>
-            );
-          })}
-
+            </div>
+          ))}
           <Gradient />
         </div>
+
       </div>
     </Section>
   );
