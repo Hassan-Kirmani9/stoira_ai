@@ -37,7 +37,7 @@ const Roadmap = () => {
         <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
           {roadmap.map((item, index) => (
             <div
-              className={`md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] bg-conic-gradient  ${item.colorful ? "bg-conic-gradient" : "bg-n-6"
+              className={`md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] ${index === 1 ? 'md:w-[39rem]' : ''} bg-conic-gradient ${item.colorful ? "bg-conic-gradient" : "bg-n-6"
                 }`}
               key={item.id}
             >
@@ -51,7 +51,7 @@ const Roadmap = () => {
 
                   <div
                     className={`mb-10 -my-10 -mx-15 ${index === 0 ? 'md:mt-[-8.5rem]' : ''
-                      } ${index === 3 ? 'mt-[-10rem]' : ''} ${index === 1 ? 'mt-[-10rem]' : ''
+                      } ${index === 3 ? 'mt-[-10rem]' : ''} ${index === 1 ? 'mt-[-10rem] md:w-[136rem]' : ''
                       }`}
                   >
                     {index === 0 ? (
@@ -69,7 +69,7 @@ const Roadmap = () => {
                         width={328}
                         height={426}
                         alt="Funnel"
-                        className="md:translate-x-32 translate-x-10"
+                        className="mx-auto md:mx-0 md:translate-x-36"
                         onMouseEnter={() => setHoveredIndex(1)}
                         onMouseLeave={() => setHoveredIndex(null)}
                       />
