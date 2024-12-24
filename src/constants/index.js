@@ -270,7 +270,7 @@ export const benefits = [
     backgroundUrl: "/card-3.svg",
     iconUrl: audiobook,
     imageUrl: benefitImage2,
-    videoUrl: "/eye_animation.mp4",
+    videoUrl: "/ear.mp4",
     bg: '#7adb78'
   },
   
