@@ -5,7 +5,7 @@ import Tagline from "./Tagline";
 import { roadmap } from "../constants";
 import { check2, grid } from "../assets";
 import { Gradient } from "./design/Roadmap";
-import waves from "../assets/roadmap/waves.mp4";
+import waves from "../assets/roadmap/waves1.gif";
 import funnel from "../assets/roadmap/funnel2.gif";
 import funnelStatic from "../assets/roadmap/funnel222.png";
 import { useEffect, useRef, useState } from "react";
@@ -55,13 +55,15 @@ const Roadmap = () => {
                       }`}
                   >
                     {index === 0 ? (
-                      <video
-                        src={waves}
+                      <img
+                        src={hoveredIndex === 0 ? waves : waves}
                         width={628}
                         height={426}
-                        loop
-                        autoPlay
-                        muted
+                        alt="Funnel"
+                  
+                        className="mx-auto md:mx-0 bg-transparent"
+                        onMouseEnter={() => setHoveredIndex(0)}
+                        onMouseLeave={() => setHoveredIndex(null)}
                       />
                     ) : index === 1 ? (
                       <img

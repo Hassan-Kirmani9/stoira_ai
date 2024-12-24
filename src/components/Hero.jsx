@@ -1,16 +1,18 @@
-import { curve, heroBackground, bgImg, bgImg2 } from "../assets";
+import { curve, heroBackground, bgImg2 } from "../assets";
 import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
-import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
-import { useRef } from "react";
-import Generating from "./Generating";
+import { useRef, useState } from "react";
 import Notification from "./Notification";
-import CompanyLogos from "./CompanyLogos";
-// import bgImg from "../assets/hero/bgImg"
+
 const Hero = () => {
   const parallaxRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
     <Section
@@ -36,18 +38,86 @@ const Hero = () => {
             </span>
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Stoira is a cutting-edge AI media house that blends technogy and creativity to produce innovative and immersive experiences.
+            Stoira is a cutting-edge AI media house that blends technology and creativity to produce innovative and immersive experiences.
           </p>
-          <Button white onClick={() => window.open("https://apps.apple.com/us/app/stoira/id6670250768", "_blank")}>
-            Get started
-          </Button>
-
+          <Button white onClick={toggleModal}>Get started</Button>
         </div>
+
+        {/* Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
+            <div className="bg-white bg-opacity-80 rounded-lg p-6 w-[90%] max-w-md shadow-lg border-2 border-purple-700 ">
+              <h2 className="text-xl font-bold mb-4 text-black">Get Started</h2>
+              <form className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium mb-1 text-black">Name</label>
+                  <input
+                    type="text"
+                    className="w-full border rounded-lg px-3 py-2 bg-black opacity-70"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1 text-black">Email</label>
+                  <input
+                    type="email"
+                    className="w-full border rounded-lg px-3 py-2 bg-black opacity-70"
+                    placeholder="Your Email"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1 text-black">Phone</label>
+                  <input
+                    type="text"
+                    className="w-full border rounded-lg px-3 py-2 bg-black opacity-70"
+                    placeholder="Your Phone"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1 text-black">Company Name</label>
+                  <input
+                    type="text"
+                    className="w-full border rounded-lg px-3 py-2 bg-black opacity-70"
+                    placeholder="Your Company Name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-1 text-black">Message</label>
+                  <textarea
+                    className="w-full border rounded-lg px-3 py-2 bg-black opacity-70"
+                    placeholder="Your Message"
+                    rows="4"
+                  />
+                </div>
+                <div className="flex justify-end space-x-4">
+                  <Button
+                    white
+                    onClick={(e) => {
+                      e.preventDefault();
+                      toggleModal();
+                    }}
+                  >
+                    Close
+                  </Button>
+                  <Button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      console.log("Form Submitted");
+                      toggleModal();
+                    }}
+                  >
+                    Submit
+                  </Button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
           <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
             <div className="relative bg-n-8 rounded-[1rem]">
               <div className="h-[1.4rem] bg-n-7 rounded-t-[0.9rem]" />
-
               <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                 <img
                   src={bgImg2}
@@ -56,10 +126,6 @@ const Hero = () => {
                   height={490}
                   alt="AI"
                 />
-
-                {/* <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" /> */}
-
-
                 <ScrollParallax isAbsolutelyPositioned>
                   <Notification
                     className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[19rem] xl:flex "
@@ -83,7 +149,6 @@ const Hero = () => {
 
           <BackgroundCircles />
         </div>
-
       </div>
 
       <BottomLine />

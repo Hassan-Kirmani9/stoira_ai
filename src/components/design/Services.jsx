@@ -1,5 +1,7 @@
 import { brainwaveWhiteSymbol, gradient, play } from "../../assets";
 import ChatBubbleWing from "../../assets/svg/ChatBubbleWing";
+import soundFile from '../../assets/services/soundbg.mp3'; // Replace with the actual path to your sound file
+
 
 export const Gradient = () => {
   return (
@@ -48,6 +50,27 @@ export const VideoChatMessage = () => {
 };
 
 export const VideoBar = () => {
+  const playSound = () => {
+    const audio = new Audio(soundFile);
+    audio.play();
+
+    let volume = 1; // Start with full volume
+    const fadeDuration = 9000; // 5 seconds to fade out
+    const fadeStep = 50; // Fade every 50ms
+
+    const fadeOut = setInterval(() => {
+      volume -= (1 / (fadeDuration / fadeStep)); // Gradually decrease volume
+      if (volume <= 0) {
+        clearInterval(fadeOut);
+        audio.pause();
+        audio.currentTime = 0; // Reset to the beginning
+      } else {
+        audio.volume = volume;
+      }
+    }, fadeStep);
+  };
+
+
   return (
     <div className="absolute left-0 bottom-0 w-full flex items-center p-6">
       <img
@@ -56,6 +79,7 @@ export const VideoBar = () => {
         height={24}
         alt="Play"
         className="object-contain mr-3"
+        onClick={playSound} // Add onClick handler
       />
 
       <div className="flex-1 bg-[#D9D9D9]">
@@ -64,3 +88,4 @@ export const VideoBar = () => {
     </div>
   );
 };
+
