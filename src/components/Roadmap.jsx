@@ -5,15 +5,18 @@ import Tagline from "./Tagline";
 import { roadmap } from "../constants";
 import { check2, grid } from "../assets";
 import { Gradient } from "./design/Roadmap";
-import waves from "../assets/roadmap/waves1.gif";
+import waves from "../assets/roadmap/waved1.png";
 import funnel from "../assets/roadmap/funnel2.gif";
 import funnelStatic from "../assets/roadmap/funnel222.png";
 import { useEffect, useRef, useState } from "react";
+import stlogo from "../assets/roadmap/stlogo.png"; // Import the overlay image
 
 const Roadmap = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const videoRefs = useRef([]); // Reference for the video element
+
+  const videoRefs = useRef([]);
 
   const handleMouseEnter = (videoElement) => {
     if (videoElement) {
@@ -55,16 +58,54 @@ const Roadmap = () => {
                       }`}
                   >
                     {index === 0 ? (
-                      <img
-                        src={hoveredIndex === 0 ? waves : waves}
-                        width={628}
-                        height={426}
-                        alt="Funnel"
-                  
-                        className="mx-auto md:mx-0 bg-transparent"
-                        onMouseEnter={() => setHoveredIndex(0)}
-                        onMouseLeave={() => setHoveredIndex(null)}
-                      />
+                      <div
+                        className="relative"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                      >
+                        <img
+                          src={hoveredIndex === 0 ? waves : waves}
+                          width={628}
+                          height={426}
+                          alt="Wave"
+                          className="mx-auto md:mx-0 bg-transparent"
+                          onMouseEnter={() => setHoveredIndex(0)}
+                          onMouseLeave={() => setHoveredIndex(null)}
+                        />
+                        {/* Overlay image with consistent size */}
+                        <img
+                          src={stlogo}
+                          alt="Overlay Logo"
+                          className={`absolute top-[50%] left-[50%] w-[100px] h-[100px] ${isHovered ? "roadmap-spinning" : "roadmap-still"
+                            }`}
+                        />
+
+                        {/* Scoped CSS for spinning */}
+                        <style jsx>{`
+                       .roadmap-still {
+                         transform: translate(-50%, -50%);
+                           width: 70rem;
+                            height: 22rem
+                       }
+                   
+                       .roadmap-spinning {
+                         animation: roadmap-spin 6s linear infinite;
+                         transform: translate(-50%, -50%);
+                         width: 70rem;
+                            height: 22rem
+                       }
+                   
+                       @keyframes roadmap-spin {
+                         0% {
+                           transform: translate(-50%, -50%) rotate(0deg);
+                         }
+                         100% {
+                           transform: translate(-50%, -50%) rotate(360deg);
+                         }
+                       }
+                     `}</style>
+                      </div>
+
                     ) : index === 1 ? (
                       <img
                         src={hoveredIndex === 1 ? funnel : funnelStatic}

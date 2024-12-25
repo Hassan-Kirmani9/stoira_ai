@@ -1,6 +1,7 @@
 import { brainwaveWhiteSymbol, gradient, play } from "../../assets";
 import ChatBubbleWing from "../../assets/svg/ChatBubbleWing";
-import soundFile from '../../assets/services/soundbg.mp3'; // Replace with the actual path to your sound file
+import soundFile from '../../assets/services/soundbg.mp3';
+import { useState } from "react";
 
 
 export const Gradient = () => {
@@ -50,42 +51,69 @@ export const VideoChatMessage = () => {
 };
 
 export const VideoBar = () => {
+  const [isSpinning, setIsSpinning] = useState(false);
+
   const playSound = () => {
     const audio = new Audio(soundFile);
     audio.play();
 
-    let volume = 1; // Start with full volume
-    const fadeDuration = 9000; // 5 seconds to fade out
-    const fadeStep = 50; // Fade every 50ms
+    let volume = 1;
+    const fadeDuration = 9000;
+    const fadeStep = 50;
 
     const fadeOut = setInterval(() => {
-      volume -= (1 / (fadeDuration / fadeStep)); // Gradually decrease volume
+      volume -= 1 / (fadeDuration / fadeStep);
       if (volume <= 0) {
         clearInterval(fadeOut);
         audio.pause();
-        audio.currentTime = 0; // Reset to the beginning
+        audio.currentTime = 0;
       } else {
         audio.volume = volume;
       }
     }, fadeStep);
-  };
 
+    setIsSpinning(true);
+    setTimeout(() => {
+      setIsSpinning(false);
+    }, 8000); // Spin for 8 seconds
+  };
 
   return (
     <div className="absolute left-0 bottom-0 w-full flex items-center p-6">
-      <img
-        src={play}
-        width={24}
-        height={24}
-        alt="Play"
-        className="object-contain mr-3"
-        onClick={playSound} // Add onClick handler
-      />
+      <style>
+        {`
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
 
-      <div className="flex-1 bg-[#D9D9D9]">
+          .animate-spin-once {
+            animation: spin 8s linear;
+          }
+        `}
+      </style>
+      {/* Button container */}
+      <div
+        onClick={playSound}
+        className="relative flex items-center justify-center w-12 h-12 hover:border-2 hover:border-white rounded-full cursor-pointer overflow-hidden"
+      >
+        {/* Play Icon */}
+        <img
+          src={play}
+          alt="Play"
+          className={`${
+            isSpinning ? "animate-spin-once" : ""
+          }`}
+        
+        />
+      </div>
+      {/* Progress bar */}
+      <div className="flex-1 bg-[#D9D9D9] ml-2">
         <div className="w-1/2 h-0.5 bg-color-1"></div>
       </div>
     </div>
   );
 };
+
+
 

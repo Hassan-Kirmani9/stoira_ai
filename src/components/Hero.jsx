@@ -104,6 +104,8 @@ const Hero = () => {
                       e.preventDefault();
                       toggleModal();
                     }}
+                    className="text-black text-[1rem]"
+
                   >
                     Close
                   </Button>
@@ -113,6 +115,7 @@ const Hero = () => {
                       console.log("Form Submitted");
                       toggleModal();
                     }}
+                    className="text-black text-[1rem]"
                   >
                     Submit
                   </Button>
