@@ -2,7 +2,7 @@ import Section from "./Section";
 import Heading from "./Heading";
 import { service1, service2, service3, check } from "../assets";
 import { brainwaveServices, brainwaveServicesIcons } from "../constants";
-import experience from "../assets/services/ai.png"
+import experience from "../assets/services/ai.jpeg"
 import {
   PhotoChatMessage,
   Gradient,
@@ -87,9 +87,9 @@ const Services = () => {
                 />
               </div>
 
-              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
-                <h4 className="h4 mb-4">AI Image Upscaling Tool</h4>
-                <p className="body-2 mb-[3rem] text-n-3">
+              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b lg:p-15">
+                <h4 className="h4 translate-y-6">AI Image Upscaling Tool</h4>
+                <p className="body-2 text-n-3 translate-y-7">
                   Boost your image quality instantly with AI-driven upscaling. Improve clarity and resolution without losing detail, perfect for creatives and professionals.                </p>
               </div>
 

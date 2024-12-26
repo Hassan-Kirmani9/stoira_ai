@@ -89,7 +89,6 @@ const Roadmap = () => {
   .roadmap-still {
     transform: translate(-50%, -50%);
     width: 70rem;
-    height: 22rem;
   }
 
   .roadmap-spinning {
