@@ -92,7 +92,6 @@ const Roadmap = () => {
     animation: roadmap-spin 6s linear infinite;
     transform: translate(-50%, -50%);
     width: 70rem;
-    height: 22rem;
   }
 
   @keyframes roadmap-spin {
