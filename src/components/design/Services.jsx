@@ -88,7 +88,7 @@ export const VideoBar = () => {
           }
 
           .animate-spin-once {
-            animation: spin 8s linear;
+            animation: spin 8sasdasdsada linear;
           }
         `} 
       </style>

@@ -1,7 +1,6 @@
 import { benefits } from "../constants";
 import Heading from "./Heading";
 import Section from "./Section";
-import Arrow from "../assets/svg/Arrow";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 
@@ -12,7 +11,7 @@ const Benefits = () => {
     <Section id="features">
       <div className="container relative z-2">
         <Heading
-          className="md:max-w-md lg:max-w-2xl" 
+          className="md:max-w-md lg:max-w-2xl"
           title="Explore Our AI-Powered Offerings"
         />
 
@@ -58,24 +57,24 @@ const Benefits = () => {
                   className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10"
                   onMouseEnter={(e) => {
                     const video = e.currentTarget.querySelector("video");
-                    if (video) video.play(); 
+                    if (video) video.play();
                   }}
                   onMouseLeave={(e) => {
                     const video = e.currentTarget.querySelector("video");
-                    if (video) video.pause(); 
+                    if (video) video.pause();
                   }}
                   onTouchStart={(e) => {
                     const video = e.currentTarget.querySelector("video");
                     if (video) {
                       video.play();
-                      e.currentTarget.style.opacity = "1"; 
+                      e.currentTarget.style.opacity = "1";
                     }
                   }}
                   onTouchEnd={(e) => {
                     const video = e.currentTarget.querySelector("video");
                     if (video) {
                       video.pause();
-                      e.currentTarget.style.opacity = "0"; 
+                      e.currentTarget.style.opacity = "0";
                     }
                   }}
                 >
@@ -87,8 +86,8 @@ const Benefits = () => {
                       className="w-full h-full object-cover"
                       loop
                       muted
-                      playsInline 
-                      
+                      playsInline
+
                     />
                   )}
                 </div>
