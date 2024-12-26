@@ -90,7 +90,7 @@ export const VideoBar = () => {
           .animate-spin-once {
             animation: spin 8s linear;
           }
-        `}
+        `} 
       </style>
       {/* Button container */}
       <div
