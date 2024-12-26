@@ -76,34 +76,43 @@ const Roadmap = () => {
                         <img
                           src={stlogo}
                           alt="Overlay Logo"
-                          className={`absolute top-[50%] left-[50%] w-[100px] h-[100px] ${isHovered ? "roadmap-spinning" : "roadmap-still"
+                          className={`w-[70rem] md:h-[22rem] absolute top-[50%] left-[50%]  ${isHovered ? "roadmap-spinning" : "roadmap-still"
                             }`}
                         />
 
                         {/* Scoped CSS for spinning */}
                         <style jsx>{`
-                       .roadmap-still {
-                         transform: translate(-50%, -50%);
-                           width: 70rem;
-                            height: 22rem
-                       }
-                   
-                       .roadmap-spinning {
-                         animation: roadmap-spin 6s linear infinite;
-                         transform: translate(-50%, -50%);
-                         width: 70rem;
-                            height: 22rem
-                       }
-                   
-                       @keyframes roadmap-spin {
-                         0% {
-                           transform: translate(-50%, -50%) rotate(0deg);
-                         }
-                         100% {
-                           transform: translate(-50%, -50%) rotate(360deg);
-                         }
-                       }
-                     `}</style>
+  .roadmap-still {
+    transform: translate(-50%, -50%);
+    width: 70rem;
+    height: 22rem;
+  }
+
+  .roadmap-spinning {
+    animation: roadmap-spin 6s linear infinite;
+    transform: translate(-50%, -50%);
+    width: 70rem;
+    height: 22rem;
+  }
+
+  @keyframes roadmap-spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+@media (min-width: 640px) {
+  .roadmap-still,
+  .roadmap-spinning {
+    width: 70rem !important; /* Use !important to override other rules */
+  }
+}
+
+`}</style>
+
                       </div>
 
                     ) : index === 1 ? (

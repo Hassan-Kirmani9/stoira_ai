@@ -61,25 +61,7 @@ const Services = () => {
                   Compose original music with ease. Our AI music creator helps you generate high-quality tracks for any project, all powered by AI.
                 </p>
 
-                <ul className="flex items-center justify-between">
-                  {brainwaveServicesIcons.map((item, index) => (
-                    <li
-                      key={index}
-                      className="rounded-2xl flex items-center justify-center w-[3rem] h-[3rem] p-0.25 md:w-[4.5rem] md:h-[4.5rem] hover:bg-conic-gradient"
 
-                    >
-
-                      <div
-
-                        className="flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem] cursor-pointer"
-
-
-                      >
-                        <img src={item} width={24} height={24} alt={item} />
-                      </div>
-                    </li>
-                  ))}
-                </ul>
               </div>
 
               <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
