@@ -7,6 +7,8 @@ import { check2, grid } from "../assets";
 import { Gradient } from "./design/Roadmap";
 import waves from "../assets/roadmap/waved1.png";
 import funnel from "../assets/roadmap/funnel2.gif";
+import immersive from "../assets/roadmap/immersive.gif";
+import immersivest from "../assets/roadmap/immersivestatic.png";
 import funnelStatic from "../assets/roadmap/funnel222.png";
 import { useEffect, useRef, useState } from "react";
 import stlogo from "../assets/roadmap/stlogo.png"; // Import the overlay image
@@ -14,6 +16,7 @@ import stlogo from "../assets/roadmap/stlogo.png"; // Import the overlay image
 const Roadmap = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [immersiveHover, setImmersiveHover] = useState(false);
 
 
   const videoRefs = useRef([]);
@@ -55,6 +58,7 @@ const Roadmap = () => {
                   <div
                     className={`mb-10 -my-10 -mx-15 ${index === 0 ? 'md:mt-[-8.5rem]' : ''
                       } ${index === 3 ? 'mt-[-10rem]' : ''} ${index === 1 ? 'mt-[-10rem] md:w-[136rem]' : ''
+                      } ${index === 2 ? 'mt-[-10rem] md:w-[136rem]' : ''
                       }`}
                   >
                     {index === 0 ? (
@@ -124,15 +128,26 @@ const Roadmap = () => {
                         onMouseEnter={() => setHoveredIndex(1)}
                         onMouseLeave={() => setHoveredIndex(null)}
                       />
-                    ) : (
-                      <img
-                        className="w-full"
-                        src={item.imageUrl}
-                        width={628}
-                        height={426}
-                        alt={item.title}
-                      />
-                    )}
+                    ) :
+                      index === 2 ? (
+                        <img
+                        src={immersiveHover === 2 ? immersive : immersivest}
+                          width={628}
+                          height={426}
+                          alt="Immersive"
+                          className="mx-auto md:mx-0"
+                          onMouseEnter={() => setImmersiveHover(2)}
+                          onMouseLeave={() => setImmersiveHover(false)}
+                        />
+                      ) : (
+                        <img
+                          className="w-full"
+                          src={item.imageUrl}
+                          width={628}
+                          height={426}
+                          alt={item.title}
+                        />
+                      )}
                   </div>
                   <h4 className="h4 mb-4">{item.title}</h4>
                   <p className="body-2 text-n-4">{item.text}</p>
