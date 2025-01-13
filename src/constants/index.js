@@ -48,22 +48,13 @@ export const navigation = [
     title: "Our Products",
     url: "#how-to-use",
   },
-  // {
-  //   id: "2",
-  //   title: "How to use",
-  //   url: "#how-to-use",
-  // },
+
   {
     id: "2",
     title: "Why Stoira",
     url: "#roadmap",
   },
-  // {
-  //   id: "4",
-  //   title: "New account",
-  //   url: "#signup",
-  //   onlyMobile: true,
-  // },
+
   {
     id: "5",
     title: "Get Started",

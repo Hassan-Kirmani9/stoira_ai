@@ -4,7 +4,6 @@ import brainwaveSymbol from "./brainwave-symbol.svg";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
 import play from "./play.svg";
 import gradient from "./gradient.png";
-import smallSphere from "./4-small.png";
 import grid from "./grid.png";
 import check2 from "./check-02.svg";
 import loading1 from "./loading-01.svg";
@@ -18,8 +17,6 @@ import recording01 from "./recording-01.svg";
 import disc02 from "./disc-02.svg";
 import chromecast from "./chrome-cast.svg";
 import sliders04 from "./sliders-04.svg";
-// import loading from "./loading.png";
-import background from "./background.jpg";
 
 import curve from "./hero/curve.png";
 import robot from "./hero/robot.jpg";
@@ -39,7 +36,6 @@ import raindrop from "./collaboration/raindrop.png";
 import slack from "./collaboration/slack.png";
 
 import service1 from "./services/img11.webp";
-import service2 from "./services/service-1.png";
 import service3 from "./services/image_2.png";
 
 import lines from "./pricing/lines.svg";
@@ -60,9 +56,6 @@ import notification2 from "./notification/image-2.png";
 import notification3 from "./notification/image-3.png";
 import notification4 from "./notification/image-4.png";
 
-// import benefitCard1 from "./benefits/card-1.svg";
-// import benefitCard2 from "./benefits/card-2.svg";
-// import benefitCard3 from "./benefits/card-3.svg";
 import benefitCard4 from "./benefits/card-4.svg";
 import benefitCard5 from "./benefits/card-5.svg";
 import benefitCard6 from "./benefits/card-6.svg";
@@ -93,7 +86,6 @@ export {
   brainwaveWhiteSymbol,
   play,
   gradient,
-  smallSphere,
   grid,
   yourlogo,
   homeSmile,
@@ -105,8 +97,6 @@ export {
   disc02,
   chromecast,
   sliders04,
-  // loading,
-  background,
   curve,
   robot,
   bgImg,
@@ -123,7 +113,6 @@ export {
   raindrop,
   slack,
   service1,
-  service2,
   service3,
   lines,
   stars,
@@ -140,9 +129,7 @@ export {
   notification2,
   notification3,
   notification4,
-  // benefitCard1,
-  // benefitCard2,
-  // benefitCard3,
+
   benefitCard4,
   benefitCard5,
   benefitCard6,
